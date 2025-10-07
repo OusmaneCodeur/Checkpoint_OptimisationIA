@@ -1,0 +1,3 @@
+Corrige les erreurs de ce code HTML et CSS (balises mal fermées, propriétés mal écrites, etc.).
+Puis transforme-le en un composant réutilisable nommé PricingCard(title, price, features), avec un design centré, des ombres correctes et un bouton interactif.
+Utilise uniquement HTML, CSS et JavaScript. Ajoute aussi une légère animation au survol.

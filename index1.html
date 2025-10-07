@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Carte de prix - Refactorisée</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f9;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+
+        .pricing {
+            width: 300px;
+            margin: auto;
+            background-color: #fff;
+            box-shadow: 0 0 10px #ccc;
+            border-radius: 10px;
+            padding: 20px;
+            text-align: center;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .pricing:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 6px 15px rgba(0, 0, 0, 0.2);
+        }
+
+        .title {
+            font-size: 24px;
+            font-weight: bold;
+            margin-bottom: 10px;
+        }
+
+        .price {
+            font-size: 20px;
+            color: green;
+            margin-bottom: 15px;
+        }
+
+        .features {
+            list-style: none;
+            padding: 0;
+            margin-bottom: 20px;
+        }
+
+        .features li {
+            padding: 8px;
+            border-bottom: 1px solid #eee;
+        }
+
+        .btn {
+            background: blue;
+            color: white;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background 0.3s ease;
+        }
+
+        .btn:hover {
+            background: darkblue;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div id="app"></div>
+
+    <script>
+        // Fonction pour créer une carte de prix réutilisable
+        function PricingCard(title, price, features) {
+            const card = document.createElement('div');
+            card.classList.add('pricing');
+
+            card.innerHTML = `
+      <h2 class="title">${title}</h2>
+      <p class="price">${price}</p>
+      <ul class="features">
+        ${features.map(item => `<li>${item}</li>`).join('')}
+      </ul>
+      <button class="btn">Démarrer l'essai</button>
+    `;
+
+            return card;
+        }
+
+        // Exemple d'utilisation
+        const app = document.getElementById('app');
+        const features = ['1 Go de stockage', 'Support basique', 'Toutes les fonctionnalités principales'];
+        app.appendChild(PricingCard('Basic Plan', '$9.99 / mois', features));
+    </script>
+
+</body>
+
+</html>
